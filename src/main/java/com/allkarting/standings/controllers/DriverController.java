@@ -30,9 +30,16 @@ public class DriverController {
         return driverService.getOne(id);
     }
 
-    @PostMapping("/addNew")
-    public String addDriver(@RequestParam Driver driver){
+
+    @PostMapping(value="/addNew")
+    public String addDriver(Driver driver){
         driverService.addNew(driver);
+        return "redirect:/drivers/getAll";
+    }
+
+    @RequestMapping(value="/update", method = {RequestMethod.PUT, RequestMethod.GET})
+    public String update(Driver driver){
+        driverService.update(driver);
         return "redirect:/drivers/getAll";
     }
 

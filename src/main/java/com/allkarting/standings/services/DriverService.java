@@ -26,4 +26,8 @@ public class DriverService {
         driverRepository.save(driver);
     }
 
+    public void update(Driver driver){
+        driverRepository.save(driver);
+    }
+
 }
